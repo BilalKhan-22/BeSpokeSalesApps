@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 style="width: 100%">
+        {% block title %} Edit {{ product.name }}'s Details
+        {% endblock %}
+    </h1>
+    <form method="post">
+        <p>
+            <label for="name">Product Name</label>
+            <input type="text" name="name"
+                   value={{ product.name }}
+                   placeholder="Product Name">
+            </input>
+        </p>
+
+        <p>
+            <label for="manufacturer">Manufacturer</label>
+            <input type="text" name="manufacturer"
+                   value={{ product.manufacturer }}
+                   placeholder="Manufacturer">
+            </input>
+        </p>
+
+        <p>
+            <label for="style">Style</label>
+            <input type="text" name="style"
+                   value={{ product.style }}
+                   placeholder="Product Style">
+            </input>
+        </p>
+
+        <p>
+            <label for="Purchase Price">Purchase Price</label>
+            <input type="number" name="purchase_price"
+                   value={{ product.purchase_price }}
+                   placeholder="Purchase Price">
+            </input>
+        </p>
+
+        <p>
+            <label for="Sale Price">Sale Price</label>
+            <input type="number" name="sale_price"
+                   value={{ product.sale_price }}
+                   placeholder="Sale Price">
+            </input>
+        </p>
+
+        <p>
+            <label for="Quantity On Hand">Quantity On Hand</label>
+            <input type="number" name="qty_on_hand"
+                   value={{ product.qty_on_hand }}
+                   placeholder="Quantity On Hand">
+            </input>
+        </p>
+
+        <p>
+            <label for="Commission Percentage">Commission Percentage</label>
+            <input type="number" name="commission_percentage"
+                   value={{ product.commission_percentage }}
+                   placeholder="Commission Percentage">
+            </input>
+        </p>
+
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+
+{% endblock %}

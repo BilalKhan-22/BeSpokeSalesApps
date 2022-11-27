@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">{% block title %} Salesperson {% endblock %}</h1>
+    <div class="content">
+        <div class="salesperson">
+            <p><b>#{{ salesperson.id }}</b></p>
+            <p class="name">
+                <a href="{{ url_for('salespersons', salesperson_id=salesperson.id)}}">
+                    {{ salesperson.first_name }} {{ salesperson.last_name }}
+                </a>
+            <p>Address: {{ salesperson.address }}</p>
+            <p>Phone: {{ salesperson.phone }}</p>
+            <p>Start Date: {{ salesperson.start_date }}</p>
+            <p>Termination Date: {{ salesperson.termination_date }}</p>
+            <p>Manager: {{ salesperson.manager }}</p>
+        </div>
+    </div>
+    <a href="{{ url_for('edit_salesperson', salesperson_id=salesperson.id) }}">Edit</a>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <span class="title">
+        <h1>{% block title %} {{ product.name }} {{ product.manufacturer }}{% endblock %}</h1>
+    </span>
+    <div class="content">
+            <div class="product">
+                <p><b>#{{ product.id }}</b></p>
+                <b>
+                    <p class="name">{{ product.name }} </p>
+                </b>
+                <p>{{ product.manufacturer }}</p>
+                <p>Style: {{ product.style }}</p>
+                <p>Purchase Price: ${{ product.purchase_price }}</p>
+                <p>Sale Price: ${{ product.sale_price }}</p>
+                <p>Quantity On Hand: {{ product.qty_on_hand }}</p>
+                <p>Commission Percentage: {{ product.commission_percentage }}%</p>
+
+
+            </div>
+    </div>
+    <a href="{{ url_for('edit_product', product_id=product.id) }}">Edit</a>
+
+
+{% endblock %}

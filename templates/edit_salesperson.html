@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 style="width: 100%">
+        {% block title %} Edit {{ salesperson.first_name }}'s Details
+        {% endblock %}
+    </h1>
+    <form method="post">
+        <!-- # §  Salesperson – First Name, Last Name, Address, Phone, Start Date, Termination Date, Manager -->
+
+        <p>
+            <label for="first_name">Salesperson First Name</label>
+            <input type="text" name="first_name"
+                   value={{ salesperson.first_name }}
+                   placeholder="Salesperson First Name">
+            </input>
+        </p>
+
+        <p>
+            <label for="last_name">Salesperson Last Name</label>
+            <input type="text" name="last_name"
+                   value={{ salesperson.last_name }}
+                   placeholder="Salesperson Last Name">
+            </input>
+        </p>
+
+        <p>
+            <label for="address">Address</label>
+            <input type="text" name="address"
+                   value={{ salesperson.address }}
+                   placeholder="Address">
+            </input>
+        </p>
+
+        <p>
+            <label for="phone">Phone</label>
+            <input type="text" name="phone"
+                   value={{ salesperson.phone }}
+                   placeholder="Salesperson Phone">
+            </input>
+        </p>
+
+        <p>
+            <label for="Start Date">Start Date</label>
+            <input type="number" name="start_date"
+                   value={{ salesperson.start_date }}
+                   placeholder="Start Date">
+            </input>
+        </p>
+
+        <p>
+            <label for="Termination Date">Termination Date</label>
+            <input type="number" name="termination_date"
+                   value={{ salesperson.termination_date }}
+                   placeholder="Termination Date">
+            </input>
+        </p>
+
+        <p>
+            <label for="Manager">Manager</label>
+            <input type="number" name="manager"
+                   value={{ salesperson.manager }}
+                   placeholder="Manager">
+            </input>
+        </p>
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+
+{% endblock %}

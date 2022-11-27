@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">{% block title %} Products {% endblock %}</h1>
+    <div class="content">
+        {% for product in products %}
+        <div class="product">
+            <p><b>#{{ product.id }}</b></p>
+            <p class="name">
+                <a href="{{ url_for('product', product_id=product.id)}}">
+                    {{ product.name }}
+                </a>
+            <p>{{ product.manufacturer }}</p>
+            <p>Style: {{ product.style }}</p>
+            <p>Purchase Price: ${{ product.purchase_price }}</p>
+            <p>Sale Price: ${{ product.sale_price }}</p>
+            <p>Quantity On Hand: {{ product.qty_on_hand }}</p>
+            <p>Commission Percentage: {{ product.commission_percentage }}%</p>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
